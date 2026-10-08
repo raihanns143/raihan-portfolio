@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <!-- Background rounded squircle tile for universal tab visibility -->
+    <linearGradient id="tile-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#0B0D13"/>
+      <stop offset="100%" stopColor="#050608"/>
+    </linearGradient>
+
+    <!-- Deep Red Accent Gradient -->
+    <linearGradient id="red-blade" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#B91C1C"/>
+      <stop offset="60%" stopColor="#DC2626"/>
+      <stop offset="100%" stopColor="#EF4444"/>
+    </linearGradient>
+
+    <!-- White stroke sheen -->
+    <linearGradient id="white-metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFFFFF"/>
+      <stop offset="100%" stopColor="#E2E8F0"/>
+    </linearGradient>
+
+    <!-- Subtle border glow -->
+    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#27272A"/>
+      <stop offset="50%" stopColor="#DC2626" stop-opacity="0.4"/>
+      <stop offset="100%" stopColor="#18181B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base Tile -->
+  <rect width="128" height="128" rx="28" fill="url(#tile-grad)"/>
+  <rect width="126" height="126" x="1" y="1" rx="27" fill="none" stroke="url(#border-glow)" stroke-width="1.5"/>
+
+  <!-- Geometric AR Monogram Graphic -->
+  <g transform="translate(4, 4) scale(0.94)">
+    <!-- 1. Left Upper A Stem (White) -->
+    <path d="M 58 24
+             L 70 24
+             L 42 80
+             L 28 80
+             Z"
+          fill="url(#white-metal)"/>
+
+    <!-- 2. R Upper Bowl (White) -->
+    <path d="M 66 28
+             L 94 28
+             C 108 28, 118 36, 118 48
+             C 118 59, 109 67, 95 67
+             L 76 67
+             L 76 56
+             L 93 56
+             C 101 56, 106 52, 106 48
+             C 106 43, 101 39, 93 39
+             L 72 39
+             Z"
+          fill="url(#white-metal)"/>
+
+    <!-- 3. R Diagonal Leg (White) -->
+    <path d="M 80 64
+             L 92 64
+             L 114 104
+             L 100 104
+             Z"
+          fill="url(#white-metal)"/>
+
+    <!-- 4. The Dynamic Crimson Blade (Red Accent #DC2626) -->
+    <!-- Sweeps from bottom-left corner of A across into R waist -->
+    <path d="M 16 104
+             C 28 94, 44 83, 62 73
+             C 78 64, 94 56, 104 50
+             C 90 58, 68 70, 48 83
+             C 34 92, 24 99, 16 104
+             Z"
+          fill="url(#red-blade)"/>
+          
+    <path d="M 16 104
+             L 28 104
+             C 44 91, 64 78, 86 68
+             L 104 50
+             C 86 60, 62 74, 40 88
+             C 28 96, 20 101, 16 104
+             Z"
+          fill="url(#red-blade)"/>
+  </g>
+</svg>
