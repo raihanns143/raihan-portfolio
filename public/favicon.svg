@@ -1,31 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="90 135 310 215" width="100%" height="100%" fill="none">
   <defs>
-    <!-- Background tile for universal contrast across light and dark browser tabs -->
-    <linearGradient id="bg-tile" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0E1017"/>
-      <stop offset="50%" stop-color="#08090C"/>
-      <stop offset="100%" stop-color="#040507"/>
-    </linearGradient>
-
     <!-- Platinum / Metallic Silver Gradients for AR Letterforms -->
     <linearGradient id="metal-silver-a" x1="15%" y1="0%" x2="85%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF"/>
       <stop offset="35%" stop-color="#F1F5F9"/>
       <stop offset="70%" stop-color="#E2E8F0"/>
-      <stop offset="100%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
     </linearGradient>
 
     <linearGradient id="metal-silver-r" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF"/>
       <stop offset="30%" stop-color="#F8FAFC"/>
       <stop offset="65%" stop-color="#E2E8F0"/>
-      <stop offset="100%" stop-color="#94A3B8"/>
-    </linearGradient>
-
-    <linearGradient id="metal-sheen-edge" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="50%" stop-color="#E2E8F0" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#64748B" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
     </linearGradient>
 
     <!-- Dynamic Crimson Red Blade Gradient -->
@@ -39,26 +26,15 @@
 
     <!-- Red Accent Ambient Glow -->
     <filter id="red-glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feGaussianBlur stdDeviation="4" result="blur"/>
       <feComposite in="SourceGraphic" in2="blur" operator="over"/>
     </filter>
-
-    <!-- Subtle Outer Border Glow -->
-    <linearGradient id="rim-border" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#27272A"/>
-      <stop offset="50%" stop-color="#DC2626" stop-opacity="0.5"/>
-      <stop offset="100%" stop-color="#18181B"/>
-    </linearGradient>
   </defs>
 
-  <!-- Premium Dark Rounded Squircle Base Tile -->
-  <rect width="512" height="512" rx="112" fill="url(#bg-tile)"/>
-  <rect width="506" height="506" x="3" y="3" rx="109" fill="none" stroke="url(#rim-border)" stroke-width="6"/>
-
-  <!-- Centered AR Monogram Matching Uploaded Reference Logo -->
-  <g transform="translate(10, 8)">
+  <!-- PURE LOGO ONLY - 100% TRANSPARENT BACKGROUND (NO BOX / NO BACKGROUND TILE) -->
+  <g id="ar-monogram-logo">
     
-    <!-- 1. Upper Left Stalk & Apex of "A" (Metallic Silver) -->
+    <!-- 1. Upper Left Stalk & Apex of 'A' -->
     <path d="M 224 156
              L 246 166
              L 204 228
@@ -69,7 +45,7 @@
              Z"
           fill="url(#metal-silver-a)"/>
 
-    <!-- 2. "A" Top Segment & Connection -->
+    <!-- 2. 'A' Top Segment & Connection -->
     <path d="M 224 156
              L 262 168
              L 242 202
@@ -77,8 +53,7 @@
              Z"
           fill="url(#metal-silver-a)"/>
 
-    <!-- 3. Upper Curved Bowl of "R" (Metallic Silver) -->
-    <!-- Top horizontal arm into sweeping outer curved bowl, returning to waist -->
+    <!-- 3. Upper Curved Bowl of 'R' -->
     <path d="M 244 168
              L 326 168
              C 358 168, 382 188, 382 220
@@ -92,8 +67,7 @@
              Z"
           fill="url(#metal-silver-r)"/>
 
-    <!-- 4. Sweeping Diagonal Leg of "R" (Metallic Silver) -->
-    <!-- Starts from waist junction, sweeps down and right with flat base -->
+    <!-- 4. Sweeping Diagonal Leg of 'R' -->
     <path d="M 302 260
              L 330 260
              L 384 334
@@ -103,11 +77,10 @@
           fill="url(#metal-silver-r)"/>
 
     <!-- Top Highlight Sheen Overlay for 3D Chiseled Look -->
-    <path d="M 244 168 L 326 168 L 326 172 L 244 172 Z" fill="#FFFFFF" opacity="0.6"/>
-    <path d="M 224 156 L 262 168 L 260 172 L 224 160 Z" fill="#FFFFFF" opacity="0.8"/>
+    <path d="M 244 168 L 326 168 L 326 171 L 244 171 Z" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M 224 156 L 262 168 L 260 171 L 224 159 Z" fill="#FFFFFF" opacity="0.8"/>
 
     <!-- 5. Signature Dynamic Crimson Red Swoosh / Blade -->
-    <!-- Sweeps from the bottom-left corner of "A" diagonally up-right cutting through the waist of "R" -->
     <path d="M 112 334
              C 142 305, 185 268, 235 242
              C 278 220, 318 202, 342 192
@@ -144,7 +117,7 @@
              C 142 308, 128 318, 124 326
              Z"
           fill="#FFA4A4"
-          opacity="0.4"/>
+          opacity="0.45"/>
 
   </g>
 </svg>

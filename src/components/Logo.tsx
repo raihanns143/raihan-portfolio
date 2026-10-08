@@ -23,7 +23,7 @@ export const Logo: React.FC<LogoProps> = ({
     <svg
       width={glyphSize}
       height={glyphSize}
-      viewBox="0 0 512 512"
+      viewBox="90 135 310 215"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="shrink-0 transition-transform group-hover:scale-105 duration-200"
@@ -51,7 +51,7 @@ export const Logo: React.FC<LogoProps> = ({
         </linearGradient>
       </defs>
 
-      <g transform="translate(10, 8)">
+      <g>
         {/* 1. Upper Left Stalk & Apex of 'A' */}
         <path
           d="M 224 156 L 246 166 L 204 228 L 165 285 L 132 334 L 112 334 L 182 222 Z"
