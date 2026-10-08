@@ -236,6 +236,15 @@ async function generateCV() {
   fs.writeFileSync(path.resolve('public/MD_Abu_Raihan_CV.pdf'), pdfBytes);
   fs.writeFileSync(path.resolve('public/resume.pdf'), pdfBytes);
   console.log(`Saved exact CV PDF (${pdfBytes.length} bytes) to public/MD_Abu_Raihan_CV.pdf and public/resume.pdf`);
+
+  // Render high-resolution crisp preview image so Chrome never blocks nested iframe PDF plugins
+  try {
+    const { execSync } = await import('child_process');
+    execSync('gs -dNOPAUSE -dBATCH -sDEVICE=png16m -r200 -sOutputFile=public/cv-preview.png public/MD_Abu_Raihan_CV.pdf');
+    console.log('Generated public/cv-preview.png at 200 DPI');
+  } catch (err) {
+    console.error('Failed to generate preview png with gs:', err);
+  }
 }
 
 generateCV().catch(console.error);

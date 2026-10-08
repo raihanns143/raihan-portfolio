@@ -2,5 +2,7 @@
   "name": "Abu Raihan - Portfolio",
   "description": "Portfolio of Abu Raihan, Diploma Engineer & Tech Developer building web applications, network monitoring systems, and IoT solutions.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

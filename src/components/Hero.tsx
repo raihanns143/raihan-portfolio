@@ -9,9 +9,12 @@ import {
   Terminal,
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
-import { downloadCv } from '../utils/downloadCv';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenCvPreview: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
   return (
     <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
       {/* Subtle deep red ambient glow */}
@@ -53,9 +56,9 @@ export const Hero: React.FC = () => {
 
               <button
                 type="button"
-                onClick={() => downloadCv()}
+                onClick={onOpenCvPreview}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-semibold text-zinc-200 hover:text-white bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-colors group cursor-pointer"
-                title="Download CV"
+                title="Preview and Download CV"
               >
                 <FileDown className="w-4 h-4 text-zinc-400 group-hover:text-red-500 transition-colors" />
                 <span>Download CV</span>
@@ -137,7 +140,7 @@ export const Hero: React.FC = () => {
                   name: <span className="text-emerald-300">"{PORTFOLIO_DATA.personal.name}"</span>,
                 </div>
                 <div className="pl-4 text-zinc-400">
-                  role: <span className="text-emerald-300">"Software & Systems Developer"</span>,
+                  role: <span className="text-emerald-300">"Diploma Engineer & Tech Developer"</span>,
                 </div>
                 <div className="pl-4 text-zinc-400">
                   location: <span className="text-emerald-300">"{PORTFOLIO_DATA.personal.location}"</span>,

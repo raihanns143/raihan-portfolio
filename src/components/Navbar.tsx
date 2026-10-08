@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, FileDown } from 'lucide-react';
 import { Logo } from './Logo';
-import { downloadCv } from '../utils/downloadCv';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenCvPreview: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenCvPreview }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -54,26 +57,26 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Action: Download CV (Desktop) */}
+        {/* Action: Download CV -> Opens Preview (Desktop) */}
         <div className="hidden md:flex items-center">
           <button
             type="button"
-            onClick={() => downloadCv()}
+            onClick={onOpenCvPreview}
             className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-zinc-200 hover:text-white bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 hover:border-zinc-700 rounded-lg transition-colors group cursor-pointer"
-            title="Download CV"
+            title="Preview and Download CV"
           >
             <FileDown className="w-3.5 h-3.5 text-red-500 group-hover:scale-110 transition-transform" />
             <span>Download CV</span>
           </button>
         </div>
 
-        {/* Mobile Toggle & Direct Download */}
+        {/* Mobile Toggle & Direct CV Preview Trigger */}
         <div className="flex md:hidden items-center gap-2">
           <button
             type="button"
-            onClick={() => downloadCv()}
+            onClick={onOpenCvPreview}
             className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-zinc-200 bg-zinc-900 border border-zinc-800 rounded-md cursor-pointer"
-            title="Download CV"
+            title="Preview and Download CV"
           >
             <FileDown className="w-3 h-3 text-red-500" />
             <span>CV</span>
@@ -107,7 +110,7 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  downloadCv();
+                  onOpenCvPreview();
                 }}
                 className="w-full flex items-center justify-center gap-2 px-3.5 py-2.5 text-xs font-semibold text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors shadow-sm cursor-pointer"
               >

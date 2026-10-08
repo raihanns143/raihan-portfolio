@@ -8,19 +8,21 @@ import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { BrandModal } from './components/BrandModal';
+import { CvPreviewModal } from './components/CvPreviewModal';
 
 export default function App() {
+  const [isCvPreviewOpen, setIsCvPreviewOpen] = useState(false);
   const [isBrandModalOpen, setIsBrandModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#08090C] text-zinc-100 flex flex-col relative tech-grid-pattern selection:bg-red-950 selection:text-red-200">
       {/* 1. Navbar */}
-      <Navbar />
+      <Navbar onOpenCvPreview={() => setIsCvPreviewOpen(true)} />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-1">
         {/* 2. Hero */}
-        <Hero />
+        <Hero onOpenCvPreview={() => setIsCvPreviewOpen(true)} />
 
         {/* 3. About */}
         <About />
@@ -40,6 +42,12 @@ export default function App() {
 
       {/* 8. Footer */}
       <Footer onOpenBrandModal={() => setIsBrandModalOpen(true)} />
+
+      {/* Official CV Document Preview Modal */}
+      <CvPreviewModal
+        isOpen={isCvPreviewOpen}
+        onClose={() => setIsCvPreviewOpen(false)}
+      />
 
       {/* Brand Identity & AR Logo System Modal */}
       <BrandModal
