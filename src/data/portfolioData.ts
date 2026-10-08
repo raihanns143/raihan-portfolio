@@ -61,6 +61,38 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
+      id: 'freshmart',
+      slug: 'freshmart',
+      title: 'FreshMart Pro',
+      category: 'Full-Stack E-Commerce Platform',
+      description:
+        'A full-stack grocery and organic fresh mart platform featuring role-based access control (RBAC), persistent cart, and product management.',
+      technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Auth.js', 'Tailwind CSS'],
+      allTechnologies: ['Next.js', 'TypeScript', 'React 19', 'PostgreSQL', 'Prisma', 'Auth.js', 'Zustand', 'TanStack Query', 'Tailwind CSS', 'Framer Motion'],
+      githubUrl: 'https://github.com/raihanns143/freshmart',
+      liveUrl: 'https://freshmart-roan.vercel.app/',
+      details: {
+        overview:
+          'FreshMart Pro is an end-to-end e-commerce solution featuring a customer-facing storefront, persistent shopping cart, wishlist, coupon system, order lifecycle management, and a comprehensive admin management panel.',
+        problem:
+          'Modern online grocery platforms require fast catalog browsing with multi-variant SKUs, instant cart responsiveness, and robust order auditing without database bottlenecks.',
+        solution:
+          'Engineered a high-performance e-commerce architecture utilizing Next.js Server Components, PostgreSQL with Prisma ORM, Auth.js v5 JWT sessions, and Zustand for responsive client-side state.',
+        features: [
+          'Full-featured storefront with categorized grocery catalog, search, and SKU-level product variants',
+          'Role-based access control (RBAC) supporting USER, ADMIN, MANAGER, and EDITOR permissions',
+          'Persistent server-side cart, customer wishlist, and coupon discount code system',
+          'Admin management dashboard for catalog moderation, order fulfillment, and stock tracking',
+          'Modern responsive design built with Tailwind CSS, Framer Motion, and mobile-first checkout workflow',
+        ],
+        role: 'Full-Stack Developer (Architected data models in Prisma, Next.js App Router endpoints, authentication middleware, and storefront components)',
+        challenges:
+          'Designing an indexed relational schema to support multi-variant products and real-time inventory adjustments while keeping storefront page loads instantaneous with ISR.',
+        results:
+          'A production-ready e-commerce platform deployed on Vercel with automated CI/CD and secure role-based session handling.',
+      },
+    },
+    {
       id: 'bloodon',
       slug: 'bloodon',
       title: 'BloodOn',
