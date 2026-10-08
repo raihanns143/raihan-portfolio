@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------
+# Apache / InfinityFree SPA Routing & MIME Configuration
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Handle Authorization Header
+  RewriteCond %{HTTP:Authorization} .
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # If requested resource exists as a file or folder, serve it directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Otherwise redirect all requests to index.html for SPA routing
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Correct MIME Types for Modern Web Assets
+<IfModule mod_mime.c>
+  AddType application/pdf .pdf
+  AddType image/svg+xml .svg .svgz
+  AddEncoding gzip .svgz
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
