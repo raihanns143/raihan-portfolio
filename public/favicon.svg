@@ -1,85 +1,150 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <!-- Background rounded squircle tile for universal tab visibility -->
-    <linearGradient id="tile-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#0B0D13"/>
-      <stop offset="100%" stopColor="#050608"/>
+    <!-- Background tile for universal contrast across light and dark browser tabs -->
+    <linearGradient id="bg-tile" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1017"/>
+      <stop offset="50%" stop-color="#08090C"/>
+      <stop offset="100%" stop-color="#040507"/>
     </linearGradient>
 
-    <!-- Deep Red Accent Gradient -->
-    <linearGradient id="red-blade" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stopColor="#B91C1C"/>
-      <stop offset="60%" stopColor="#DC2626"/>
-      <stop offset="100%" stopColor="#EF4444"/>
+    <!-- Platinum / Metallic Silver Gradients for AR Letterforms -->
+    <linearGradient id="metal-silver-a" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#F1F5F9"/>
+      <stop offset="70%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
     </linearGradient>
 
-    <!-- White stroke sheen -->
-    <linearGradient id="white-metal" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#FFFFFF"/>
-      <stop offset="100%" stopColor="#E2E8F0"/>
+    <linearGradient id="metal-silver-r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#F8FAFC"/>
+      <stop offset="65%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
     </linearGradient>
 
-    <!-- Subtle border glow -->
-    <linearGradient id="border-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#27272A"/>
-      <stop offset="50%" stopColor="#DC2626" stop-opacity="0.4"/>
-      <stop offset="100%" stopColor="#18181B"/>
+    <linearGradient id="metal-sheen-edge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#E2E8F0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#64748B" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Dynamic Crimson Red Blade Gradient -->
+    <linearGradient id="red-swoosh" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="20%" stop-color="#991B1B"/>
+      <stop offset="55%" stop-color="#DC2626"/>
+      <stop offset="85%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#F87171"/>
+    </linearGradient>
+
+    <!-- Red Accent Ambient Glow -->
+    <filter id="red-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Subtle Outer Border Glow -->
+    <linearGradient id="rim-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#27272A"/>
+      <stop offset="50%" stop-color="#DC2626" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#18181B"/>
     </linearGradient>
   </defs>
 
-  <!-- Squircle Base Tile -->
-  <rect width="128" height="128" rx="28" fill="url(#tile-grad)"/>
-  <rect width="126" height="126" x="1" y="1" rx="27" fill="none" stroke="url(#border-glow)" stroke-width="1.5"/>
+  <!-- Premium Dark Rounded Squircle Base Tile -->
+  <rect width="512" height="512" rx="112" fill="url(#bg-tile)"/>
+  <rect width="506" height="506" x="3" y="3" rx="109" fill="none" stroke="url(#rim-border)" stroke-width="6"/>
 
-  <!-- Geometric AR Monogram Graphic -->
-  <g transform="translate(4, 4) scale(0.94)">
-    <!-- 1. Left Upper A Stem (White) -->
-    <path d="M 58 24
-             L 70 24
-             L 42 80
-             L 28 80
+  <!-- Centered AR Monogram Matching Uploaded Reference Logo -->
+  <g transform="translate(10, 8)">
+    
+    <!-- 1. Upper Left Stalk & Apex of "A" (Metallic Silver) -->
+    <path d="M 224 156
+             L 246 166
+             L 204 228
+             L 165 285
+             L 132 334
+             L 112 334
+             L 182 222
              Z"
-          fill="url(#white-metal)"/>
+          fill="url(#metal-silver-a)"/>
 
-    <!-- 2. R Upper Bowl (White) -->
-    <path d="M 66 28
-             L 94 28
-             C 108 28, 118 36, 118 48
-             C 118 59, 109 67, 95 67
-             L 76 67
-             L 76 56
-             L 93 56
-             C 101 56, 106 52, 106 48
-             C 106 43, 101 39, 93 39
-             L 72 39
+    <!-- 2. "A" Top Segment & Connection -->
+    <path d="M 224 156
+             L 262 168
+             L 242 202
+             L 204 228
              Z"
-          fill="url(#white-metal)"/>
+          fill="url(#metal-silver-a)"/>
 
-    <!-- 3. R Diagonal Leg (White) -->
-    <path d="M 80 64
-             L 92 64
-             L 114 104
-             L 100 104
+    <!-- 3. Upper Curved Bowl of "R" (Metallic Silver) -->
+    <!-- Top horizontal arm into sweeping outer curved bowl, returning to waist -->
+    <path d="M 244 168
+             L 326 168
+             C 358 168, 382 188, 382 220
+             C 382 248, 360 268, 332 272
+             L 292 272
+             L 278 248
+             L 325 248
+             C 344 248, 356 236, 356 220
+             C 356 200, 342 190, 322 190
+             L 252 190
              Z"
-          fill="url(#white-metal)"/>
+          fill="url(#metal-silver-r)"/>
 
-    <!-- 4. The Dynamic Crimson Blade (Red Accent #DC2626) -->
-    <!-- Sweeps from bottom-left corner of A across into R waist -->
-    <path d="M 16 104
-             C 28 94, 44 83, 62 73
-             C 78 64, 94 56, 104 50
-             C 90 58, 68 70, 48 83
-             C 34 92, 24 99, 16 104
+    <!-- 4. Sweeping Diagonal Leg of "R" (Metallic Silver) -->
+    <!-- Starts from waist junction, sweeps down and right with flat base -->
+    <path d="M 302 260
+             L 330 260
+             L 384 334
+             L 332 334
+             L 284 274
              Z"
-          fill="url(#red-blade)"/>
-          
-    <path d="M 16 104
-             L 28 104
-             C 44 91, 64 78, 86 68
-             L 104 50
-             C 86 60, 62 74, 40 88
-             C 28 96, 20 101, 16 104
+          fill="url(#metal-silver-r)"/>
+
+    <!-- Top Highlight Sheen Overlay for 3D Chiseled Look -->
+    <path d="M 244 168 L 326 168 L 326 172 L 244 172 Z" fill="#FFFFFF" opacity="0.6"/>
+    <path d="M 224 156 L 262 168 L 260 172 L 224 160 Z" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- 5. Signature Dynamic Crimson Red Swoosh / Blade -->
+    <!-- Sweeps from the bottom-left corner of "A" diagonally up-right cutting through the waist of "R" -->
+    <path d="M 112 334
+             C 142 305, 185 268, 235 242
+             C 278 220, 318 202, 342 192
+             C 308 208, 260 232, 218 258
+             C 176 282, 140 312, 112 334
              Z"
-          fill="url(#red-blade)"/>
+          fill="url(#red-swoosh)"/>
+
+    <path d="M 112 334
+             L 160 332
+             C 198 298, 246 264, 302 234
+             L 342 192
+             C 294 214, 238 250, 188 288
+             C 158 310, 136 324, 112 334
+             Z"
+          fill="url(#red-swoosh)"
+          filter="url(#red-glow)"/>
+
+    <!-- Core Red Blade Body for maximum vibrant saturation -->
+    <path d="M 112 334
+             L 158 332
+             C 196 298, 244 264, 302 234
+             L 342 192
+             C 296 212, 242 248, 192 286
+             C 162 308, 138 322, 112 334
+             Z"
+          fill="url(#red-swoosh)"/>
+
+    <!-- Top Specular Highlight on Red Blade Curve -->
+    <path d="M 124 326
+             C 165 292, 222 254, 285 224
+             L 336 195
+             C 280 220, 218 254, 162 294
+             C 142 308, 128 318, 124 326
+             Z"
+          fill="#FFA4A4"
+          opacity="0.4"/>
+
   </g>
 </svg>

@@ -15,17 +15,15 @@ export const Logo: React.FC<LogoProps> = ({
   className = '',
   showSubtitle = true,
 }) => {
-  // Theme-aware fill colors
-  const bodyColor = theme === 'light' ? '#090A0F' : '#FFFFFF';
   const textColor = theme === 'light' ? '#090A0F' : '#FFFFFF';
   const subtitleColor = theme === 'light' ? '#4B5563' : '#9CA3AF';
 
-  // The distinctive AR Monogram Vector Glyph
+  // The distinctive AR Monogram Vector Glyph matching uploaded brand identity
   const renderGlyph = (glyphSize: number) => (
     <svg
       width={glyphSize}
       height={glyphSize}
-      viewBox="0 0 160 160"
+      viewBox="0 0 512 512"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="shrink-0 transition-transform group-hover:scale-105 duration-200"
@@ -38,58 +36,75 @@ export const Logo: React.FC<LogoProps> = ({
           <stop offset="100%" stopColor="#EF4444" />
         </linearGradient>
 
-        <linearGradient id={`white-metal-${theme}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={bodyColor} />
-          <stop offset="100%" stopColor={theme === 'light' ? '#18181B' : '#E4E4E7'} />
+        <linearGradient id={`metal-silver-a-${theme}`} x1="15%" y1="0%" x2="85%" y2="100%">
+          <stop offset="0%" stopColor={theme === 'light' ? '#18181B' : '#FFFFFF'} />
+          <stop offset="40%" stopColor={theme === 'light' ? '#27272A' : '#F1F5F9'} />
+          <stop offset="75%" stopColor={theme === 'light' ? '#3F3F46' : '#E2E8F0'} />
+          <stop offset="100%" stopColor={theme === 'light' ? '#52525B' : '#94A3B8'} />
+        </linearGradient>
+
+        <linearGradient id={`metal-silver-r-${theme}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={theme === 'light' ? '#18181B' : '#FFFFFF'} />
+          <stop offset="40%" stopColor={theme === 'light' ? '#27272A' : '#F8FAFC'} />
+          <stop offset="75%" stopColor={theme === 'light' ? '#3F3F46' : '#E2E8F0'} />
+          <stop offset="100%" stopColor={theme === 'light' ? '#52525B' : '#94A3B8'} />
         </linearGradient>
       </defs>
 
-      {/* 1. Left Diagonal Stem of 'A' */}
-      <path
-        d="M 68 22 L 82 22 L 48 90 L 32 90 Z"
-        fill={`url(#white-metal-${theme})`}
-      />
+      <g transform="translate(10, 8)">
+        {/* 1. Upper Left Stalk & Apex of 'A' */}
+        <path
+          d="M 224 156 L 246 166 L 204 228 L 165 285 L 132 334 L 112 334 L 182 222 Z"
+          fill={`url(#metal-silver-a-${theme})`}
+        />
 
-      {/* 2. Upper Bowl of 'R' */}
-      <path
-        d="M 78 28
-           L 114 28
-           C 132 28, 146 39, 146 54
-           C 146 68, 134 78, 116 78
-           L 92 78
-           L 92 65
-           L 114 65
-           C 124 65, 131 59, 131 53
-           C 131 47, 124 41, 114 41
-           L 86 41
-           Z"
-        fill={`url(#white-metal-${theme})`}
-      />
+        {/* 2. 'A' Top Segment */}
+        <path
+          d="M 224 156 L 262 168 L 242 202 L 204 228 Z"
+          fill={`url(#metal-silver-a-${theme})`}
+        />
 
-      {/* 3. Diagonal Landing Leg of 'R' */}
-      <path
-        d="M 98 74 L 114 74 L 140 128 L 122 128 Z"
-        fill={`url(#white-metal-${theme})`}
-      />
+        {/* 3. Upper Curved Bowl of 'R' */}
+        <path
+          d="M 244 168
+             L 326 168
+             C 358 168, 382 188, 382 220
+             C 382 248, 360 268, 332 272
+             L 292 272
+             L 278 248
+             L 325 248
+             C 344 248, 356 236, 356 220
+             C 356 200, 342 190, 322 190
+             L 252 190
+             Z"
+          fill={`url(#metal-silver-r-${theme})`}
+        />
 
-      {/* 4. The Dynamic Crimson Blade Crossbar (Velocity Slash #DC2626) */}
-      <path
-        d="M 18 128
-           L 32 128
-           C 52 112, 78 96, 106 84
-           L 126 62
-           C 104 74, 76 90, 48 108
-           C 34 118, 24 124, 18 128
-           Z"
-        fill={`url(#red-accent-${theme})`}
-      />
+        {/* 4. Sweeping Diagonal Leg of 'R' */}
+        <path
+          d="M 302 260 L 330 260 L 384 334 L 332 334 L 284 274 Z"
+          fill={`url(#metal-silver-r-${theme})`}
+        />
+
+        {/* 5. Signature Dynamic Crimson Red Swoosh / Blade */}
+        <path
+          d="M 112 334
+             L 158 332
+             C 196 298, 244 264, 302 234
+             L 342 192
+             C 296 212, 242 248, 192 286
+             C 162 308, 138 322, 112 334
+             Z"
+          fill={`url(#red-accent-${theme})`}
+        />
+      </g>
     </svg>
   );
 
   // Variant: Mark only
   if (variant === 'mark') {
     return (
-      <div className={`inline-flex items-center justify-center ${className}`}>
+      <div className={`inline-flex items-center ${className}`}>
         {renderGlyph(size)}
       </div>
     );
@@ -98,21 +113,21 @@ export const Logo: React.FC<LogoProps> = ({
   // Variant: Stacked
   if (variant === 'stacked') {
     return (
-      <div className={`flex flex-col items-center gap-2 group ${className}`}>
-        {renderGlyph(size)}
+      <div className={`inline-flex flex-col items-center gap-2 ${className}`}>
+        {renderGlyph(size * 1.5)}
         <div className="text-center">
           <span
-            className="text-sm font-extrabold tracking-wider uppercase block"
+            className="font-bold tracking-tight text-base block font-sans"
             style={{ color: textColor }}
           >
             Abu Raihan
           </span>
           {showSubtitle && (
             <span
-              className="text-[10px] tracking-widest font-mono uppercase block mt-0.5"
+              className="text-[11px] font-mono tracking-widest uppercase block mt-0.5"
               style={{ color: subtitleColor }}
             >
-              Developer · Builder
+              Developer
             </span>
           )}
         </div>
@@ -120,20 +135,20 @@ export const Logo: React.FC<LogoProps> = ({
     );
   }
 
-  // Variant: Full Horizontal Lockup
+  // Default: Full Horizontal Lockup
   return (
-    <div className={`inline-flex items-center gap-2.5 group ${className}`}>
+    <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
       {renderGlyph(size)}
       <div className="flex flex-col">
         <span
-          className="text-base font-bold tracking-tight leading-tight"
+          className="font-extrabold tracking-tight text-sm sm:text-base leading-tight font-sans"
           style={{ color: textColor }}
         >
           Abu Raihan
         </span>
         {showSubtitle && (
           <span
-            className="text-[10px] tracking-wider font-mono uppercase leading-tight"
+            className="text-[10px] font-mono tracking-wider uppercase leading-none mt-0.5"
             style={{ color: subtitleColor }}
           >
             Developer
