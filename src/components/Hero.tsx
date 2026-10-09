@@ -102,15 +102,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
               }
             }}
           />
-
-          {/* Seamless Edge Fades directly into #08090C on all 4 sides & corners */}
-          <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
-          <div className="absolute inset-x-0 bottom-0 h-72 sm:h-96 bg-gradient-to-t from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 left-0 w-48 sm:w-72 md:w-80 bg-gradient-to-r from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 md:w-56 bg-gradient-to-l from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
-
-          {/* Subtle Technical Grid Overlay seamlessly matching the portfolio background */}
-          <div className="absolute inset-0 tech-grid-pattern opacity-40 pointer-events-none" />
         </div>
       </div>
 
