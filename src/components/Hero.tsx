@@ -28,15 +28,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
         <div className="absolute top-1/3 right-1/4 translate-x-1/4 -translate-y-1/2 w-[550px] h-[450px] bg-red-950/35 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-red-950/25 blur-[140px] rounded-full pointer-events-none" />
 
-        {/* Portrait Image Container - Mobile strictly preserved, desktop placed in marked right area */}
-        <div className="absolute top-0 right-[-100px] sm:right-[-40px] md:right-[-180px] lg:right-[-260px] xl:right-[-300px] 2xl:right-[-320px] w-[560px] sm:w-[700px] md:w-[950px] lg:w-[1100px] xl:w-[1220px] max-w-none h-full flex justify-end items-start pt-2 sm:pt-6">
+        {/* Portrait Image Container - Mobile & Tablet strictly preserved, desktop shifted right to fully reveal face */}
+        <div className="absolute top-0 right-[-100px] sm:right-[-40px] md:right-[-180px] lg:right-[-390px] xl:right-[-440px] 2xl:right-[-480px] w-[560px] sm:w-[700px] md:w-[950px] lg:w-[1100px] xl:w-[1220px] max-w-none h-full flex justify-end items-start pt-2 sm:pt-6">
           <img
             src={portraitImg}
             alt=""
-            className="w-[540px] sm:w-[680px] md:w-[920px] lg:w-[1080px] xl:w-[1200px] max-w-none h-auto object-contain object-top opacity-60 md:opacity-75 lg:opacity-80 transition-opacity duration-500"
+            className="w-[540px] sm:w-[680px] md:w-[920px] lg:w-[1080px] xl:w-[1200px] max-w-none h-auto object-contain object-top opacity-60 md:opacity-75 lg:opacity-85 xl:opacity-90 transition-opacity duration-500"
             style={{
-              maskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 25%, transparent 72%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 25%, transparent 72%)',
+              maskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 28%, transparent 74%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 28%, transparent 74%)',
             }}
             onError={(e) => {
               const target = e.currentTarget;
