@@ -51,9 +51,16 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({ project,
               <ArrowLeft className="w-4 h-4" />
             </button>
             <div>
-              <span className="text-xs font-mono text-zinc-400">
-                {project.category}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-mono text-zinc-400">
+                  {project.category}
+                </span>
+                {project.year && (
+                  <span className="text-[11px] font-mono text-red-400 bg-red-950/40 border border-red-800/40 px-1.5 py-0.2 rounded font-medium">
+                    {project.year}
+                  </span>
+                )}
+              </div>
               <h3 id="modal-project-title" className="text-xl font-bold text-white">
                 {project.title}
               </h3>

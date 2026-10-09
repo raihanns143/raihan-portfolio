@@ -3,6 +3,7 @@ export interface Project {
   slug: string;
   title: string;
   category: string;
+  year: string;
   description: string;
   technologies: string[];
   allTechnologies: string[];
@@ -65,6 +66,7 @@ export const PORTFOLIO_DATA = {
       slug: 'freshmart',
       title: 'FreshMart Pro',
       category: 'Full-Stack E-Commerce Platform',
+      year: '2026',
       description:
         'A full-stack grocery and organic fresh mart platform featuring role-based access control (RBAC), persistent cart, and product management.',
       technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Auth.js', 'Tailwind CSS'],
@@ -93,10 +95,44 @@ export const PORTFOLIO_DATA = {
       },
     },
     {
+      id: 'vibe',
+      slug: 'vibe',
+      title: 'Vibe',
+      category: 'Social Platform / Web Application',
+      year: '2026',
+      description:
+        'A modern, high-performance social platform designed for sharing posts, exploring community feeds, polling, and interactive networking.',
+      technologies: ['React 19', 'TypeScript', 'Tailwind CSS', 'Motion'],
+      allTechnologies: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Motion', 'Lucide React'],
+      githubUrl: 'https://github.com/raihanns143/Vibe',
+      liveUrl: 'https://vibe-blond-one.vercel.app/',
+      details: {
+        overview:
+          'Vibe is a responsive frontend social platform featuring dynamic post composition, community feeds, interactive polls, comment threads, and profile management with fluid micro-interactions.',
+        problem:
+          'Modern social applications often feel cluttered, slow to respond, and overwhelmed with intrusive tracking, lacking crisp dark-mode ergonomics and snappy UI transitions.',
+        solution:
+          'Engineered an ultra-fast, intuitive social networking client utilizing React 19, Motion for layout animations, and Tailwind CSS for high-contrast dark aesthetic with instant client-side responsiveness.',
+        features: [
+          'Interactive social feed with rich media posts, polling, and comment threads',
+          'Fluid micro-interactions and smooth layout transitions powered by Motion',
+          'User profile exploration with verified badges, followers count, and activity timeline',
+          'Responsive dark-first interface optimized for seamless mobile and desktop navigation',
+          'Modular state architecture and accessible interaction design',
+        ],
+        role: 'Frontend Architect & UI Developer (Designed feed interface, layout animations, modal interactions, and component library)',
+        challenges:
+          'Creating butter-smooth list animations and re-renders when toggling likes, bookmarks, and expanding deep comment trees without frame drops.',
+        results:
+          'A sleek, responsive modern social platform demo deployed on Vercel with instant feedback and clean dark-mode visuals.',
+      },
+    },
+    {
       id: 'bloodon',
       slug: 'bloodon',
       title: 'BloodOn',
       category: 'Full-Stack Web Application',
+      year: '2026',
       description:
         'A modern blood donation platform designed to connect people who need blood with potential donors.',
       technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Auth.js'],
@@ -129,18 +165,20 @@ export const PORTFOLIO_DATA = {
       slug: 'network-monitor',
       title: 'Smart Network Monitoring & Device Tracker',
       category: 'Network Monitoring / Web Application',
+      year: '2026',
       description:
         'A network monitoring and device tracking system for discovering devices and auditing local network activity.',
       technologies: ['Python', 'Flask', 'MySQL', 'Scapy'],
       allTechnologies: ['Python', 'Flask', 'MySQL', 'Scapy', 'Psutil', 'SQLAlchemy', 'Bootstrap', 'Chart.js'],
       githubUrl: 'https://github.com/raihanns143/Smart-network-monitor',
+      liveUrl: 'https://smart-network-monitor-alpha.vercel.app/',
       details: {
         overview:
           'A network diagnostic and device tracking system that audits local subnet activity, discovers connected devices via ARP probing, and presents traffic data through a web interface.',
         problem:
           'Local area networks frequently lack lightweight, accessible tools to detect unrecognized devices and monitor bandwidth bottlenecks without expensive enterprise software.',
         solution:
-          'A Python-based utility that leverages Scapy for packet inspection and ARP scanning, storing device connection logs in MySQL and visualizing metrics in a clean browser dashboard.',
+          'A practical utility that leverages Scapy for packet inspection and ARP scanning, storing device connection logs in MySQL and visualizing metrics in a clean browser dashboard.',
         features: [
           'Subnet-wide ARP scanning to catalog active IP, MAC addresses, and hardware vendors',
           'Real-time network interface bandwidth metrics captured using Psutil',
@@ -160,6 +198,7 @@ export const PORTFOLIO_DATA = {
       slug: 'waterq',
       title: 'WaterQ',
       category: 'IoT / Embedded Systems',
+      year: '2025',
       description:
         'An IoT-based water quality monitoring system built with ESP32 and environmental sensors.',
       technologies: ['ESP32', 'IoT', 'Blynk', 'Embedded C/C++'],
@@ -191,6 +230,7 @@ export const PORTFOLIO_DATA = {
       slug: 'news-today',
       title: 'News Today',
       category: 'Web Application',
+      year: '2025',
       description:
         'A modern news portal for publishing and managing news content through a web-based platform.',
       technologies: ['React', 'PHP', 'MySQL'],

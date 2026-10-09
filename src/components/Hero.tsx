@@ -16,11 +16,54 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
   return (
-    <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-      {/* Subtle deep red ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-red-950/20 blur-[130px] rounded-full pointer-events-none -z-10" />
+    <section id="home" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden isolate">
+      {/* Integrated Red-Neon Portrait Background Layer (Subtle, cinematic, dark-blended behind hero UI) */}
+      <div 
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none -z-10 overflow-hidden flex justify-center items-start select-none"
+      >
+        {/* Ambient Neon Atmosphere (Magenta/Fuchsia on left, Crimson Red on right) */}
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[450px] bg-fuchsia-950/30 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 translate-x-1/4 -translate-y-1/2 w-[550px] h-[450px] bg-red-950/35 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-red-950/25 blur-[140px] rounded-full pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        {/* Portrait Image Container - Mobile strictly preserved, desktop shifted into the marked right area */}
+        <div className="absolute top-0 right-[-100px] sm:right-[-40px] md:right-[-260px] lg:right-[-300px] xl:right-[-320px] w-[560px] sm:w-[700px] md:w-[1000px] lg:w-[1150px] xl:w-[1250px] max-w-none h-full flex justify-end items-start pt-2 sm:pt-6">
+          <img
+            src="/Neon-lit%20contemplative%20portrait.png"
+            alt=""
+            className="w-[540px] sm:w-[680px] md:w-[980px] lg:w-[1120px] xl:w-[1200px] max-w-none h-auto object-contain object-top opacity-55 transition-opacity duration-500"
+            style={{
+              maskImage: 'radial-gradient(ellipse 65% 55% at 53% 38%, black 25%, transparent 72%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 53% 38%, black 25%, transparent 72%)',
+            }}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.includes('portrait.png')) {
+                target.src = '/portrait.png';
+              }
+            }}
+          />
+
+          {/* Seamless Edge Fades directly into #08090C on all 4 sides & corners */}
+          {/* Top Fade (feathers below navbar) */}
+          <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
+          
+          {/* Bottom Fade (deep gradual fade down into About section) */}
+          <div className="absolute inset-x-0 bottom-0 h-72 sm:h-96 bg-gradient-to-t from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
+          
+          {/* Left Fade (feathers softly into #08090C before reaching the text on the left) */}
+          <div className="absolute inset-y-0 left-0 w-48 sm:w-72 md:w-96 lg:w-[480px] bg-gradient-to-r from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
+          
+          {/* Right Fade (feathers into #08090C at screen right edge) */}
+          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 md:w-64 bg-gradient-to-l from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
+
+          {/* Subtle Technical Grid Overlay seamlessly matching the portfolio background */}
+          <div className="absolute inset-0 tech-grid-pattern opacity-40 pointer-events-none" />
+        </div>
+      </div>
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Hero Content */}
@@ -114,10 +157,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
 
           {/* Right Column: Clean Developer Visual (Code Terminal Window) */}
           <div className="lg:col-span-5">
-            <div className="rounded-xl border border-zinc-800 bg-[#0c0e14] shadow-2xl overflow-hidden">
+            <div className="rounded-xl border border-zinc-800/60 bg-[#0c0e14]/40 backdrop-blur-md shadow-2xl overflow-hidden">
               
               {/* Terminal Window Header */}
-              <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-900/70 border-b border-zinc-800">
+              <div className="flex items-center justify-between px-4 py-2.5 bg-zinc-900/40 border-b border-zinc-800/60">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -131,7 +174,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
               </div>
 
               {/* Code Snippet */}
-              <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed text-zinc-300 space-y-1.5 bg-[#090b10]">
+              <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed text-zinc-300 space-y-1.5 bg-transparent">
                 <div>
                   <span className="text-red-400">const</span>{' '}
                   <span className="text-yellow-200">developer</span> = {'{'}
