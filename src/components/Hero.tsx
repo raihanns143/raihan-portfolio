@@ -9,6 +9,7 @@ import {
   Terminal,
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
+import portraitImg from '../assets/images/portrait.png';
 
 interface HeroProps {
   onOpenCvPreview: () => void;
@@ -27,19 +28,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
         <div className="absolute top-1/3 right-1/4 translate-x-1/4 -translate-y-1/2 w-[550px] h-[450px] bg-red-950/35 blur-[150px] rounded-full pointer-events-none" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-red-950/25 blur-[140px] rounded-full pointer-events-none" />
 
-        {/* Portrait Image Container - Mobile strictly preserved, desktop shifted into the marked right area */}
-        <div className="absolute top-0 right-[-100px] sm:right-[-40px] md:right-[-260px] lg:right-[-300px] xl:right-[-320px] w-[560px] sm:w-[700px] md:w-[1000px] lg:w-[1150px] xl:w-[1250px] max-w-none h-full flex justify-end items-start pt-2 sm:pt-6">
+        {/* Portrait Image Container - Mobile strictly preserved, desktop placed in marked right area */}
+        <div className="absolute top-0 right-[-100px] sm:right-[-40px] md:right-[-180px] lg:right-[-260px] xl:right-[-300px] 2xl:right-[-320px] w-[560px] sm:w-[700px] md:w-[950px] lg:w-[1100px] xl:w-[1220px] max-w-none h-full flex justify-end items-start pt-2 sm:pt-6">
           <img
-            src="/Neon-lit%20contemplative%20portrait.png"
+            src={portraitImg}
             alt=""
-            className="w-[540px] sm:w-[680px] md:w-[980px] lg:w-[1120px] xl:w-[1200px] max-w-none h-auto object-contain object-top opacity-55 transition-opacity duration-500"
+            className="w-[540px] sm:w-[680px] md:w-[920px] lg:w-[1080px] xl:w-[1200px] max-w-none h-auto object-contain object-top opacity-60 md:opacity-75 lg:opacity-80 transition-opacity duration-500"
             style={{
-              maskImage: 'radial-gradient(ellipse 65% 55% at 53% 38%, black 25%, transparent 72%)',
-              WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 53% 38%, black 25%, transparent 72%)',
+              maskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 25%, transparent 72%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 65% 55% at 47% 42%, black 25%, transparent 72%)',
             }}
             onError={(e) => {
               const target = e.currentTarget;
-              if (!target.src.includes('portrait.png')) {
+              if (target.src !== '/portrait.png') {
                 target.src = '/portrait.png';
               }
             }}
@@ -53,10 +54,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvPreview }) => {
           <div className="absolute inset-x-0 bottom-0 h-72 sm:h-96 bg-gradient-to-t from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
           
           {/* Left Fade (feathers softly into #08090C before reaching the text on the left) */}
-          <div className="absolute inset-y-0 left-0 w-48 sm:w-72 md:w-96 lg:w-[480px] bg-gradient-to-r from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-48 sm:w-72 md:w-80 lg:w-96 bg-gradient-to-r from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
           
           {/* Right Fade (feathers into #08090C at screen right edge) */}
-          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 md:w-64 bg-gradient-to-l from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 sm:w-48 md:w-56 bg-gradient-to-l from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
 
           {/* Subtle Technical Grid Overlay seamlessly matching the portfolio background */}
           <div className="absolute inset-0 tech-grid-pattern opacity-40 pointer-events-none" />
